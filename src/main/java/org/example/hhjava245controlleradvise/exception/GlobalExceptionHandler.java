@@ -16,8 +16,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public String handleException(Exception exception) {
-        return exception.getMessage()+ " send from GLOBAL";
+    public ErrorResponseDTO handleException(Exception exception) {
+        return new ErrorResponseDTO(exception.getMessage()+ " send from GLOBAL");
     }
 
 }
